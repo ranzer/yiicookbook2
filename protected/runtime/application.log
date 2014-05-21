@@ -1,1 +1,153 @@
 2014/05/21 11:11:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yiicookbook.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2014/05/21 11:26:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yiicookbook.post' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `Post`.
+in D:\xampp\htdocs\yiicookbook\index.php (13)
+2014/05/21 11:26:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to find the code you requested.' in D:\xampp\htdocs\yiicookbook\framework\gii\CCodeGenerator.php:90
+Stack trace:
+#0 D:\xampp\htdocs\yiicookbook\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionCode()
+#1 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(282): CController->run('code')
+#5 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/model/code')
+#6 D:\xampp\htdocs\yiicookbook\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 D:\xampp\htdocs\yiicookbook\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/yiicookbook/index.php?r=gii/model/code&id=0
+HTTP_REFERER=http://localhost:8080/yiicookbook/index.php?r=gii/model/index
+---
+2014/05/21 11:34:21 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'tbl_post' already exists. The SQL statement executed was: CREATE TABLE `tbl_post` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`text` text NOT NULL
+).
+2014/05/21 11:35:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'tbl_post' already exists. The SQL statement executed was: CREATE TABLE `tbl_post` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`text` text NOT NULL
+).
+2014/05/21 11:42:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1072 Key column 'comment_id' doesn't exist in table. The SQL statement executed was: ALTER TABLE `tbl_comment` ADD CONSTRAINT `fk_comment_post` FOREIGN KEY (`comment_id`) REFERENCES `tbl_post` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT.
+2014/05/21 11:43:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1091 Can't DROP 'fk_comment_post'; check that column/key exists. The SQL statement executed was: ALTER TABLE `tbl_comment` DROP FOREIGN KEY `fk_comment_post`.
+2014/05/21 13:33:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\yiicookbook\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\yiicookbook\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\yiicookbook\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(282): CController->run('addComment')
+#8 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(141): CWebApplication->runController('post/addComment')
+#9 D:\xampp\htdocs\yiicookbook\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\yiicookbook\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yiicookbook/index.php?r=post/addComment
+HTTP_REFERER=http://localhost:8080/yiicookbook/index.php?r=site/login
+---
+2014/05/21 13:34:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in D:\xampp\htdocs\yiicookbook\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 D:\xampp\htdocs\yiicookbook\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\yiicookbook\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(282): CController->run('addComment')
+#8 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(141): CWebApplication->runController('post/addComment')
+#9 D:\xampp\htdocs\yiicookbook\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\yiicookbook\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yiicookbook/index.php?r=post/addComment
+HTTP_REFERER=http://localhost:8080/yiicookbook/index.php?r=site/login
+---
+2014/05/21 13:35:58 [error] [php] Creating default object from empty value (D:\xampp\htdocs\yiicookbook\protected\controllers\PostController.php:53)
+Stack trace:
+#0 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#1 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\yiicookbook\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#4 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(265): PostController->runActionWithFilters()
+#7 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(282): PostController->run()
+#8 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\yiicookbook\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\yiicookbook\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiicookbook/index.php?r=post/addComment
+in D:\xampp\htdocs\yiicookbook\protected\controllers\PostController.php (53)
+in D:\xampp\htdocs\yiicookbook\index.php (13)
+2014/05/21 13:37:16 [error] [php] Creating default object from empty value (D:\xampp\htdocs\yiicookbook\protected\controllers\PostController.php:56)
+Stack trace:
+#0 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#1 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\yiicookbook\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#4 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(265): PostController->runActionWithFilters()
+#7 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(282): PostController->run()
+#8 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\yiicookbook\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\yiicookbook\index.php(13): CWebApplication->run()
+REQUEST_URI=/yiicookbook/index.php?r=post/addComment
+in D:\xampp\htdocs\yiicookbook\protected\controllers\PostController.php (56)
+in D:\xampp\htdocs\yiicookbook\index.php (13)
+2014/05/21 13:38:49 [error] [exception.CException] exception 'CException' with message 'Property "Comment.author" is not defined.' in D:\xampp\htdocs\yiicookbook\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\xampp\htdocs\yiicookbook\framework\db\ar\CActiveRecord.php(161): CComponent->__set('author', 'Super Mario')
+#1 D:\xampp\htdocs\yiicookbook\protected\controllers\PostController.php(57): CActiveRecord->__set('author', 'Super Mario')
+#2 D:\xampp\htdocs\yiicookbook\framework\web\actions\CInlineAction.php(49): PostController->actionAddComment()
+#3 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yiicookbook\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(282): CController->run('addComment')
+#12 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(141): CWebApplication->runController('post/addComment')
+#13 D:\xampp\htdocs\yiicookbook\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\yiicookbook\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yiicookbook/index.php?r=post/addComment
+---
+2014/05/21 13:39:00 [error] [exception.CException] exception 'CException' with message 'Property "NewCommentEvent.post" is not defined.' in D:\xampp\htdocs\yiicookbook\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\xampp\htdocs\yiicookbook\protected\models\Post.php(109): CComponent->__set('post', Object(Post))
+#1 D:\xampp\htdocs\yiicookbook\protected\controllers\PostController.php(59): Post->addComment(Object(Comment))
+#2 D:\xampp\htdocs\yiicookbook\framework\web\actions\CInlineAction.php(49): PostController->actionAddComment()
+#3 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yiicookbook\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(282): CController->run('addComment')
+#12 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(141): CWebApplication->runController('post/addComment')
+#13 D:\xampp\htdocs\yiicookbook\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\yiicookbook\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yiicookbook/index.php?r=post/addComment
+---
+2014/05/21 13:54:46 [error] [exception.CException] exception 'CException' with message 'Property "NewCommentEvent.post" is not defined.' in D:\xampp\htdocs\yiicookbook\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\xampp\htdocs\yiicookbook\protected\models\Post.php(110): CComponent->__set('post', Object(Post))
+#1 D:\xampp\htdocs\yiicookbook\protected\controllers\PostController.php(59): Post->addComment(Object(Comment))
+#2 D:\xampp\htdocs\yiicookbook\framework\web\actions\CInlineAction.php(49): PostController->actionAddComment()
+#3 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yiicookbook\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yiicookbook\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\xampp\htdocs\yiicookbook\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(282): CController->run('addComment')
+#12 D:\xampp\htdocs\yiicookbook\framework\web\CWebApplication.php(141): CWebApplication->runController('post/addComment')
+#13 D:\xampp\htdocs\yiicookbook\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\yiicookbook\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yiicookbook/index.php?r=post/addComment
+---

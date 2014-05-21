@@ -12,14 +12,16 @@ class m140520_123934_yii_events extends CDbMigration
 		$this->createTable('tbl_comment', array(
 			'id'=>'pk',
 			'text'=>'text NOT NULL',
-			'comment_id'=>'int(11) NOT NULL',
+			'post_id'=>'int(11) NOT NULL',
 		));
-		$this->addForeignKey('fk_comment_post', 'tbl_comment', 'comment_id', 
+		$this->addForeignKey('fk_comment_post', 'tbl_comment', 'post_id', 
 			'tbl_post', 'id', 'CASCADE', 'RESTRICT');
 	}
 
 	public function safeDown()
 	{
-	
+		$this->dropForeignKey('fk_comment_post', 'tbl_comment');
+		$this->dropTable('tbl_comment');
+		$this->dropTable('tbl_post');
 	}
 }
